@@ -32,6 +32,8 @@ class StdOutListener(StreamListener):
         # converting time tweet was created to easier format for mongoDB
             created = datetime.datetime.strptime(dateTime, '%a %b %d %H:%M:%S +0000 %Y')
 
+            text = "" + text + ""
+
             tweet = {'id':tweet_id, 'username':username, 'followers':followers, 'text':text, 'hashtags':hashtags, 'created':created}
 
             collection.save(tweet)
@@ -44,12 +46,11 @@ class StdOutListener(StreamListener):
     # Prints error of code 
     def on_error(self, status):
         print ("Error:" , status)
-
  ########## REPLACE BEFORE SUBMITTING!!!!!!!!!!!!!#####################   
-consumer_key = ""
-consumer_secret = ""
-access_token = ""
-access_token_secret = ""
+consumer_key = "cyQtZjEeJ5TWl8jAl2UEbirLN"
+consumer_secret = "O6kxD9M3m7kub9h6WIsgaXnWYKAOa2GGDCGqN6xW79jwEjmWs4"
+access_token = "750813140326154240-W3ozr584bBPCzVUA2N8jYCnXK76pdd5"
+access_token_secret = "QZroLr2y5YygdK2ZjQUievrJioZxEMzcE4CeoqJWj09ae"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
