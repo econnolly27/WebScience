@@ -1,0 +1,7 @@
+pymongo
+tweepy
+sklearn
+json
+datetime
+time 
+jgraph
